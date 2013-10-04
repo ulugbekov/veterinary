@@ -1,4 +1,35 @@
 Veterinary::Application.routes.draw do
+  namespace :admin do
+    resources :users
+  end
+
+
+  root to: "home#index"
+
+  resources :profiles
+
+
+  resources :pet_types
+
+
+  resources :appointments
+
+
+  resources :pets
+
+
+  resources :addresses
+
+
+  devise_for :users
+
+  resources :roles
+  
+  
+  scope "/admin" do
+    resources :users
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
