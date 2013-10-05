@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   # POST /roles.json
   def create
     @user = User.new(params[:user])
-
+    @roles = Role.roles
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
